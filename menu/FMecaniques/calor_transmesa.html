@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Calor transmesa</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card divap" >
+        <h1>Calor transmesa</h1>
+        <label>Escriu la conductivitat termica: </label>
+        <input type="text" id="cterm"/>
+        <br><br
+        <label>Escriu el superficie: </label>
+        <input type="text" id="sup"/>
+        <br><br>
+        <label>Escriu el temps: </label>
+        <input type="text" id="tmp"/>
+        <br><br>
+        <label>Escriu la difrencia de temperatures: </label>
+        <input type="text" id="dtemp"/>
+        <br><br>
+        <label>Escriu el gruix: </label>
+        <input type="text" id="grx"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../fmecaniques.html">Torna a fórmules mecàniques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var ctermica = document.getElementById("cterm");
+        var superficie = document.getElementById("sup");
+        var temps = document.getElementById("tmp");
+        var dtemperatures = document.getElementById("dtemp");
+        var gruix = document.getElementById("grx");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        function calcul(){
+
+            ct = parseFloat(ctermica.value);
+            A = parseFloat(superficie.value);
+            t = parseFloat(temps.value);
+            dt = parseFloat(dtemperatures.value);
+            L = parseFloat(gruix.value);
+
+            r = ct * ((A * t * dt)/L);
+
+            resultat.innerHTML = "<h3> " + ctermica.value + " * ((" + superficie.value +"  * " + temps.value + " * " + dtemperatures.value + " ) " + " / " + gruix.value + " = " + r + "</h3>" ;
+
+            ctermica.value = "";
+            superficie.value = "";
+            temps.value = "";
+            dtemperatures.value = "";
+            gruix.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

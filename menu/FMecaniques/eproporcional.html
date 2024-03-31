@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Esforç proporcional</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Esforç proporcional</h1>
+        <label>Escriu el modul elàstic: </label>
+        <input type="text" id="model"/>
+        <br><br>
+        <label>Escriu l'allargament unitari: </label>
+        <input type="text" id="alun"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcula()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../fmecaniques.html">Torna a fórmules mecàniques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var melastic = document.getElementById("model");
+        var aunitari = document.getElementById("alun");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        
+        
+        function calcula(){
+
+            E = parseFloat(melastic.value);
+            e = parseFloat(aunitari.value);
+
+            r = E * e;
+
+            resultat.innerHTML = "<h3>" + melastic.value + " x " + aunitari.value + " = " + r + "</h3>" ;
+
+            melastic.value = "";
+            aunitari.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

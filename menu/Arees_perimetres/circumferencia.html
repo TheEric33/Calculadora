@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àrea i perímetre: Circumferència</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Àrea i perímetre: Circumferència</h1>
+        <label>Indica el radi: </label>
+        <input type="text" id="radi"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="area"></div>
+        <div id="perimetre"></div>
+        <br>
+        <a href="../aree_perim.html">Torna a arees i perímetres</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var radi = document.getElementById("radi");
+        var area = document.getElementById("area");
+        var perim = document.getElementById("perimetre");
+        var a;
+        var p;
+        const pi = 3.1415926535;
+
+        function calcul(){
+
+            r = parseInt(radi.value);
+
+            a = pi * (Math.pow(r,2));
+            p = 2 * pi * r;
+
+            area.innerHTML = "<h3> " + " L'àrea és igual a " + a + "</h3>";
+            perim.innerHTML = "<h3> " + " El perímetre és igual a " + p + "</h3>";
+
+            radi.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

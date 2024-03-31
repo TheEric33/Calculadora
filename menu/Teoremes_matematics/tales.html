@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teorema de Tales</title>
+    <link rel="stylesheet" href="../../css/estils.css">
+    <link rel="stylesheet" href="../../css/w3.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Teorema de Tales</h1>
+        <label>Indica el valor del costat: </label>
+        <input type="text" id="cllarg"/>
+        <br><br>
+        <label>Indica el valor del costat petit del costat que volem trobar: </label>
+        <input type="text" id="cpetitinc"/>
+        <br><br>
+        <label>Indica el valor del costat petit: </label>
+        <input type="text" id="cpetit"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="tales()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../teoremes.html">Torna a Teoremes matematics</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var cllarg = document.getElementById("cllarg");
+        var cpetit = document.getElementById("cpetit");
+        var cpetitinc = document.getElementById("cpetitinc");
+        var resultat = document.getElementById("resultat");
+        var r;
+
+        function tales(){
+
+            al = parseInt(cllarg.value);
+            a = parseInt(cpetit.value);
+            b = parseInt(cpetitinc.value);
+
+            r = (al*b)/a;
+
+            resultat.innerHTML = "<h3> " +  cllarg.value + " * "  + cpetitinc.value + " / " + cpetit.value + " = " + r + " </h3> ";
+
+            cllarg.value = "";
+            cpetit.value = "";
+            cpetitinc.value = "";
+
+        }
+
+    </script>
+
+</body>
+</html>

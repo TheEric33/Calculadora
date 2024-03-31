@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Moviment circular uniforme</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Moviment circular uniforme</h1>
+        <label>Escriu la velocitat angular: </label>
+        <input type="text" id="va"/>
+        <br><br>
+        <label>Escriu el radi de la curvatura: </label>
+        <input type="text" id="rc"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../ffisiques.html">Torna a fórmules físiques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var velAng = document.getElementById("va");
+        var raCur = document.getElementById("rc");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        
+        
+        function calcul(){
+
+            w = parseFloat(velAng.value);
+            rc = parseFloat(raCur.value);
+
+            r = w * rc;
+
+            resultat.innerHTML = "<h3>" + velAng.value + " x " + raCur.value + " = " + r + "</h3>" ;
+
+            velAng.value = "";
+            raCur.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

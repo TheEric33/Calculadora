@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Densitat</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Densitat</h1>
+        <label>Escriu la massa: </label>
+        <input type="text" id="mas"/>
+        <br><br>
+        <label>Escriu el volum: </label>
+        <input type="text" id="vol"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../fmecaniques.html">Torna a fórmules mecàniques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var massa = document.getElementById("mas");
+        var volum = document.getElementById("vol");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        
+        
+        function calcul(){
+
+            m = parseFloat(massa.value);
+            v = parseFloat(volum.value);
+
+            r = m / v;
+
+            resultat.innerHTML = "<h3>" + massa.value + " / " + volum.value + " = " + r + "</h3>" ;
+
+            massa.value = "";
+            volum.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

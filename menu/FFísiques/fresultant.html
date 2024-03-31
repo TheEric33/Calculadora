@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Força resultant</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Força resultant</h1>
+        <label>Escriu la massa: </label>
+        <input type="text" id="massa"/>
+        <br><br>
+        <label>Escriu l'acceleració: </label>
+        <input type="text" id="acc"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../ffisiques.html">Torna a fórmules físiques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var ma = document.getElementById("massa");
+        var ac = document.getElementById("acc");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        
+        
+        function calcul(){
+
+            m = parseFloat(massa.value);
+            a = parseFloat(acc.value);
+
+            r = m * a;
+
+            resultat.innerHTML = "<h3>" + massa.value + " x " + acc.value + " = " + r + "</h3>" ;
+
+            massa.value = "";
+            acc.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

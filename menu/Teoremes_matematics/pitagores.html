@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teorema de Pitàgores</title>
+    <link rel="stylesheet" href="../../css/estils.css">
+    <link rel="stylesheet" href="../../css/w3.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Teorema de Pitàgores</h1>
+        <label>Indica el valor del primer catet: </label>
+        <input type="text" id="catet1"/>
+        <br><br>
+        <label>Indica el valor del segon catet: </label>
+        <input type="text" id="catet2"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="pitagores()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../teoremes.html">Torna a Teoremes matematics</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var catet1 = document.getElementById("catet1");
+        var catet2 = document.getElementById("catet2");
+        var resultat = document.getElementById("resultat");
+        var r;
+
+        function pitagores(){
+
+            c1 = parseInt(catet1.value);
+            c2 = parseInt(catet2.value);
+
+            r = Math.sqrt((Math.pow(c1,2) + Math.pow(c2,2)));
+
+            resultat.innerHTML = "<h3> " + " √ " + catet1.value + " ^2 " + " + " + catet2.value + " ^2 " + " = " + r + " </h3> ";
+
+            catet1.value = "";
+            catet2.value = "";
+
+        }
+
+    </script>
+
+</body>
+</html>

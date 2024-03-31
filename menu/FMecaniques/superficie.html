@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Superficie</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Superficie</h1>
+        <label>Escriu el Diametre: </label>
+        <input type="text" id="dia"/>
+        <br><br>
+        <label>Escriu la distancia: </label>
+        <input type="text" id="dist"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../fmecaniques.html">Torna a fórmules mecàniques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var diametre = document.getElementById("dia");
+        var distancia = document.getElementById("dist");
+        var resultat = document.getElementById("resultat");
+        var r;
+        const pi = 3.1415926535;
+        
+        
+        
+        function calcul(){
+
+            D = parseFloat(diametre.value);
+            d = parseFloat(distancia.value);
+
+            r = (pi * D) * (D - Math.sqrt((Math.pow(D, 2)) - Math.pow(d, 2))) / 2;
+
+            resultat.innerHTML = "<h4> (" + pi + " * " + diametre.value +" ) * ( " + diametre.value + " - √" + diametre.value + " ^ " + 2 + " - √" + diametre.value + " ^ " + 2 + ") = " + r + "</h4>" ;
+
+            diametre.value = "";
+            distancia.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolars a Euros</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Dolars a Euros</h1>
+        <label>Indica la xifra en Dolars: </label>
+        <input type="text" id="xif"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="conversio()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../conversio_monedes.html">Torna a conversió de monedes</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var xifra = document.getElementById("xif");
+        var resultat = document.getElementById("resultat");
+        var r;
+
+        function conversio(){
+
+            D = parseFloat(xifra.value);
+            r = D * 0.92;
+
+            resultat.innerHTML = "<h3> " + xifra.value + "$  = " + r + "€</h3>";
+
+            xifra.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

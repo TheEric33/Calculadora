@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farenheit a Kelvin</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Farenheit a Kelvin</h1>
+        <label>Indica els graus en Farenheit: </label>
+        <input type="text" id="far"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="conversio()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../conversio_graus.html">Torna a conversió de graus</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var farenheit = document.getElementById("far");
+        var resultat = document.getElementById("resultat");
+        var C;
+        var r;
+
+        function conversio(){
+
+            F = parseFloat(farenheit.value);
+            C = (F - 32) * 5/9;
+            r = C + 273.15;
+
+            resultat.innerHTML = "<h3>" + farenheit.value + " = " + r + "</h3>";
+
+            farenheit.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

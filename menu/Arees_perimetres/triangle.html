@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àrea i perímetre: Triangle</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Àrea i perímetre: Triangle</h1>
+        <label>Indica la base: </label>
+        <input type="text" id="base"/>
+        <br><br>
+        <label>Indica l'altura: </label>
+        <input type="text" id="altura"/>
+        <br><br>
+        <label>Indica la diagonal: </label>
+        <input type="text" id="diagonal"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="area"></div>
+        <div id="perimetre"></div>
+        <br>
+        <a href="../aree_perim.html">Torna a arees i perímetres</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var base = document.getElementById("base");
+        var altura = document.getElementById("altura");
+        var diagonal = document.getElementById("diagonal");
+        var area = document.getElementById("area");
+        var perim = document.getElementById("perimetre");
+        var a;
+        var p;
+
+        function calcul(){
+
+            b = parseInt(base.value);
+            h = parseInt(altura.value);
+            d = parseInt(diagonal.value);
+
+            a = (b * h)/2;
+            p = b + h + d;
+
+            area.innerHTML = "<h3> " + " L'àrea és igual a " + a + "</h3>";
+            perim.innerHTML = "<h3> " + " El perímetre és igual a " + p + "</h3>";
+
+            base.value = "";
+            altura.value = "";
+            diagonal.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àrea i perímetre: Hexagon</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Àrea i perímetre: Hexagon</h1>
+        <label>Indica la mesura dels costats: </label>
+        <input type="text" id="costat"/>
+        <br><br>
+        <label>Indica l'apotema: </label>
+        <input type="text" id="apotema"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="area"></div>
+        <div id="perimetre"></div>
+        <br>
+        <a href="../aree_perim.html">Torna a arees i perímetres</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var costat = document.getElementById("costat");
+        var apotema = document.getElementById("apotema");
+        var area = document.getElementById("area");
+        var perim = document.getElementById("perimetre");
+        var a;
+        var p;
+
+        function calcul(){
+
+            c = parseInt(costat.value);
+            ap = parseInt(apotema.value);
+
+            p = c * 6;
+            a = (p * ap)/2;
+
+            area.innerHTML = "<h3> " + " L'àrea és igual a " + a + "</h3>";
+            perim.innerHTML = "<h3> " + " El perímetre és igual a " + p + "</h3>";
+
+            costat.value = "";
+            apotema.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

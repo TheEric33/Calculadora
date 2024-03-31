@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Divisió</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Divisió</h1>
+        <label>Escriu el primer nombre: </label>
+        <input type="text" id="primer"/>
+        <br><br>
+        <label>Escriu el segon nombre: </label>
+        <input type="text" id="segon"/>
+        <br><br>
+        <input type="submit" value="divideix" onclick="divisio()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../basica.html">Torna a la calculadora bàsica</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var primer = document.getElementById("primer");
+        var segon = document.getElementById("segon");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        
+        
+        function divisio(){
+
+            d1 = parseInt(primer.value);
+            d2 = parseInt(segon.value);
+
+            r = d1 / d2;
+
+            resultat.innerHTML = "<h3>" + primer.value + " / " + segon.value + " = " + r + "</h3>" ;
+
+            primer.value = "";
+            segon.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

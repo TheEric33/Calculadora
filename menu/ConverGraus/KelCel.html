@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin a Celsius</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Kelvin a Celsius</h1>
+        <label>Indica els graus en Kelvin: </label>
+        <input type="text" id="kel"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="conversio()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../conversio_graus.html">Torna a conversió de graus</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var kelvin = document.getElementById("kel");
+        var resultat = document.getElementById("resultat");
+        var r;
+
+        function conversio(){
+
+            K = parseFloat(kelvin.value);
+            r = K - 273.15;
+
+            resultat.innerHTML = "<h3>" + kelvin.value + " = " + r + "</h3>";
+
+            kelvin.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

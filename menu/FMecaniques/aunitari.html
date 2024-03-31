@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+    <title>Allargament unitari</title>
+</head>
+<body>
+
+    <div class="w3-center w3-card div" >
+        <h1>Allargament unitari</h1>
+        <label>Escriu la llargada inicial: </label>
+        <input type="text" id="linicial"/>
+        <br><br>
+        <label>Escriu la llargada final: </label>
+        <input type="text" id="lfinal"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcula()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../fmecaniques.html">Torna a fórmules mecàniques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    
+
+    
+
+    <script>
+
+        var llarg_inc = document.getElementById("linicial");
+        var llarg_fin = document.getElementById("lfinal");
+        var resultat = document.getElementById("resultat");
+        var r;
+        
+        
+        
+        function calcula(){
+
+            l0 = parseFloat(llarg_inc.value);
+            lf = parseFloat(llarg_fin.value);
+
+            r = (lf - l0) / 10;
+
+            resultat.innerHTML = "<h3> (" + llarg_fin.value + " - " + llarg_inc.value + ") / 10 = " + r + "</h3>" ;
+
+            llarg_inc.value = "";
+            llarg_fin.value = "";
+
+        }
+
+    </script>
+    
+</body>
+</html>

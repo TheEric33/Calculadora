@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potència</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>Potència</h1>
+        <label>Indica la base: </label>
+        <input type="text" id="base"/>
+        <br><br>
+        <label>Indica l'exponent: </label>
+        <input type="text" id="exp"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="potencia()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../cientifica.html">Torna a la calculadora científica</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var base = document.getElementById("base");
+        var exponent = document.getElementById("exp");
+        var resultat = document.getElementById("resultat");
+        var r;
+
+        function potencia(){
+
+            b = parseInt(base.value);
+            e = parseInt(exponent.value);
+            r = Math.pow(b,e);
+
+            resultat.innerHTML = "<h3>" + base.value + " ^ " + exponent.value + " = " + r + "</h3>";
+
+            base.value="";
+            exponent.value="";
+
+        }
+
+    </script>
+
+</body>
+</html>

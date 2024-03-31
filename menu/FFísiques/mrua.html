@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimient rectilini uniformement accelerat</title>
+    <link rel="stylesheet" href="../../css/w3.css">
+    <link rel="stylesheet" href="../../css/estils.css">
+</head>
+<body>
+    
+    <div class="w3-center w3-card div">
+
+        <h1>M.R.U.A</h1>
+        <label>Indica la posició inicial: </label>
+        <input type="text" id="posicio"/>
+        <br><br>
+        <label>Indica la velocitat inicial: </label>
+        <input type="text" id="velocitat"/>
+        <br><br>
+        <label>Indica el temps: </label>
+        <input type="text" id="temps"/>
+        <br><br>
+        <label>Indica l'acceleració: </label>
+        <input type="text" id="acceleracio"/>
+        <br><br>
+        <input type="submit" value="calcula" onclick="calcul()" />
+        <div id="resultat"></div>
+        <br>
+        <a href="../ffisiques.html">Torna a fórmules físiques</a>
+        <p><a href="../../index.html">Torna al menú principal</a></p>
+
+    </div>
+
+    <script>
+
+        var posicio = document.getElementById("posicio");
+        var velocitat = document.getElementById("velocitat");
+        var temps = document.getElementById("temps");
+        var acceleracio = document.getElementById("acceleracio");
+        var resultat = document.getElementById("resultat");
+        var s;
+
+        function calcul(){
+
+            s0 = parseInt(posicio.value);
+            v0 = parseInt(velocitat.value);
+            t = parseInt(temps.value);
+            a = parseInt(acceleracio.value);
+            
+
+            s = (s0 + v0) * t + (0.5 * Math.pow((a * t),2));
+            
+
+            resultat.innerHTML = "<h3>  (" + posicio.value + " * " + velocitat.value + ") * " + temps.value + " + (0,5 *  (" + acceleracio.value + " * " + temps.value + ")^2) = " + s + "</h3>";
+
+            posicio.value = "";
+            velocitat.value = "";
+            temps.value = "";
+            acceleracio.value = "";
+            
+
+        }
+
+    </script>
+
+</body>
+</html>
